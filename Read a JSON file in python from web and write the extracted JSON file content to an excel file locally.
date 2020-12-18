@@ -1,0 +1,16 @@
+Read a JSON file in python from web and write the extracted JSON file content to an excel file locally.
+
+
+import wget
+import pandas as pd
+import openpyxl
+
+url=("https://raw.githubusercontent.com/ScriptKKiddie/Sample_Datasets/main/JSON/LTG_Member.json")
+data=wget.download(url)
+
+df=pd.read_json(r'D:\DATA\LTG_Member.json')
+excel=df.to_excel("D:\DATA\LTG_Member.xlsx")
+
+print(excel)
+print(df)
+
